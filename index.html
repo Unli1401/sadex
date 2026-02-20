@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sadex | Protección profesional contra plagas</title>
+    <meta
+      name="description"
+      content="Sadex ofrece fumigación, desratización y control integral de plagas con procesos seguros, modernos y efectivos."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #081121;
+        --surface: #0f1d35;
+        --surface-soft: #132645;
+        --primary: #2cd4ad;
+        --primary-2: #7af9cb;
+        --text: #eaf4ff;
+        --muted: #a9bfd8;
+        --danger: #ff6e7a;
+        --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Manrope", system-ui, -apple-system, sans-serif;
+        background: radial-gradient(circle at 10% 0%, #132d4f, var(--bg) 46%), var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1120px, 92%);
+        margin: 0 auto;
+      }
+
+      header {
+        position: sticky;
+        top: 0;
+        backdrop-filter: blur(12px);
+        background: rgba(8, 17, 33, 0.74);
+        border-bottom: 1px solid rgba(122, 249, 203, 0.12);
+        z-index: 20;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.85rem 0;
+      }
+
+      .brand {
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        font-size: 1.25rem;
+      }
+
+      .brand span {
+        color: var(--primary-2);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.2rem;
+        align-items: center;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .btn {
+        border: none;
+        border-radius: 999px;
+        padding: 0.75rem 1.2rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background: linear-gradient(120deg, var(--primary), var(--primary-2));
+        color: #04201a;
+      }
+
+      .hero {
+        padding: 4.2rem 0 3.2rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        gap: 1.8rem;
+        grid-template-columns: 1.1fr 1fr;
+        align-items: center;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.35rem 0.75rem;
+        border: 1px solid rgba(122, 249, 203, 0.28);
+        border-radius: 999px;
+        color: var(--primary-2);
+        font-size: 0.82rem;
+        margin-bottom: 0.9rem;
+      }
+
+      h1,
+      h2,
+      h3 {
+        line-height: 1.1;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 5vw, 3.9rem);
+      }
+
+      .hero p {
+        color: var(--muted);
+        max-width: 55ch;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        margin-top: 1.35rem;
+      }
+
+      .btn-secondary {
+        border: 1px solid rgba(234, 244, 255, 0.25);
+        background: transparent;
+        color: var(--text);
+      }
+
+      .hero-card {
+        background: linear-gradient(170deg, rgba(44, 212, 173, 0.15), rgba(15, 29, 53, 0.9));
+        border: 1px solid rgba(122, 249, 203, 0.23);
+        border-radius: 24px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .hero-card img {
+        height: 330px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .hero-card-content {
+        padding: 1.1rem 1.2rem 1.3rem;
+      }
+
+      .hero-card-content strong {
+        color: var(--primary-2);
+      }
+
+      .section {
+        padding: 3.3rem 0;
+      }
+
+      .section-title {
+        font-size: clamp(1.5rem, 3vw, 2.4rem);
+        margin-bottom: 0.5rem;
+      }
+
+      .section-subtitle {
+        color: var(--muted);
+        max-width: 68ch;
+      }
+
+      .service-grid {
+        margin-top: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .service {
+        background: var(--surface);
+        border: 1px solid rgba(169, 191, 216, 0.15);
+        padding: 1.25rem;
+        border-radius: 18px;
+      }
+
+      .service h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      .service p {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      .service-mark {
+        color: var(--primary-2);
+        margin-bottom: 0.35rem;
+        font-weight: 800;
+      }
+
+      .stats {
+        margin-top: 2rem;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.9rem;
+      }
+
+      .stat {
+        text-align: center;
+        padding: 1rem;
+        background: var(--surface-soft);
+        border-radius: 14px;
+      }
+
+      .stat b {
+        display: block;
+        font-size: 1.55rem;
+      }
+
+      .contact {
+        display: grid;
+        gap: 1.3rem;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+      }
+
+      .contact-card,
+      form {
+        background: var(--surface);
+        border-radius: 20px;
+        padding: 1.2rem;
+        border: 1px solid rgba(169, 191, 216, 0.18);
+      }
+
+      .contact-list {
+        color: var(--muted);
+        margin: 0;
+        padding-left: 1rem;
+      }
+
+      form {
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      label {
+        font-weight: 600;
+        font-size: 0.92rem;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        background: #08162d;
+        border: 1px solid rgba(169, 191, 216, 0.26);
+        border-radius: 12px;
+        color: var(--text);
+        padding: 0.75rem 0.8rem;
+        font: inherit;
+      }
+
+      textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+
+      #status {
+        min-height: 1.1rem;
+        font-size: 0.9rem;
+      }
+
+      #status.ok {
+        color: var(--primary-2);
+      }
+
+      #status.error {
+        color: var(--danger);
+      }
+
+      footer {
+        border-top: 1px solid rgba(169, 191, 216, 0.15);
+        margin-top: 3rem;
+        padding: 1.2rem 0 2rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 930px) {
+        .hero-grid,
+        .contact {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 2.8rem;
+        }
+
+        .service-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 620px) {
+        .nav-links a:not(.btn) {
+          display: none;
+        }
+
+        .service-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <a class="brand" href="#">SA<span>DEX</span></a>
+          <div class="nav-links">
+            <a href="#servicios">Servicios</a>
+            <a href="#proceso">Proceso</a>
+            <a href="#contacto">Contáctenos</a>
+            <a class="btn btn-primary" href="#contacto">Solicitar visita</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="pill">🔰 Seguridad certificada y atención rápida</div>
+            <h1>Ambientes sanos, negocios confiables y familias tranquilas.</h1>
+            <p>
+              Sadex combina técnica profesional, monitoreo inteligente y respuesta inmediata para
+              eliminar plagas de raíz. Tu espacio se transforma en una zona segura y preparada para
+              crecer.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contacto">Quiero una asesoría</a>
+              <a class="btn btn-secondary" href="#servicios">Ver soluciones</a>
+            </div>
+          </div>
+          <article class="hero-card">
+            <img
+              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80"
+              alt="Técnico fumigando una zona interior de manera profesional"
+            />
+            <div class="hero-card-content">
+              <p>
+                <strong>Atención 24/7:</strong> diagnóstico técnico, tratamiento focalizado y plan
+                preventivo para hogares, oficinas, restaurantes e industrias.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="servicios">
+        <div class="container">
+          <h2 class="section-title">Control integral para cada tipo de plaga</h2>
+          <p class="section-subtitle">
+            Propuesta visual inspirada en webs de servicios premium: bloques claros, beneficios
+            directos y llamadas a la acción enfocadas en confianza y resultados.
+          </p>
+
+          <div class="service-grid">
+            <article class="service">
+              <div class="service-mark">01 · FUMIGACIÓN</div>
+              <h3>Control de insectos rastreros y voladores</h3>
+              <p>
+                Programas residenciales y comerciales con productos seguros y protocolos por zonas.
+              </p>
+            </article>
+            <article class="service">
+              <div class="service-mark">02 · DESRATIZACIÓN</div>
+              <h3>Monitoreo y eliminación de roedores</h3>
+              <p>
+                Mapeo de puntos críticos, estaciones cebaderas y seguimiento continuo para evitar
+                reinfestaciones.
+              </p>
+            </article>
+            <article class="service">
+              <div class="service-mark">03 · PREVENCIÓN</div>
+              <h3>Blindaje sanitario a mediano y largo plazo</h3>
+              <p>
+                Planes de mantenimiento para hoteles, plantas de producción, almacenes y condominios.
+              </p>
+            </article>
+          </div>
+
+          <div class="stats" id="proceso">
+            <div class="stat"><b>+12</b>Años de experiencia</div>
+            <div class="stat"><b>98%</b>Clientes satisfechos</div>
+            <div class="stat"><b>1,500+</b>Servicios realizados</div>
+            <div class="stat"><b>24h</b>Respuesta prioritaria</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contacto">
+        <div class="container contact">
+          <aside class="contact-card">
+            <h2 class="section-title">Contáctenos</h2>
+            <p class="section-subtitle">
+              Cuéntanos tu caso y te responderemos con un plan inicial de intervención.
+            </p>
+            <ul class="contact-list">
+              <li>📞 Teléfono: +51 999 999 999</li>
+              <li>✉️ Correo: contacto@sadex.com</li>
+              <li>📍 Cobertura: zona urbana e industrial</li>
+            </ul>
+          </aside>
+
+          <form id="contactForm" novalidate>
+            <div>
+              <label for="name">Nombre</label>
+              <input id="name" name="name" placeholder="Tu nombre" required />
+            </div>
+            <div>
+              <label for="phone">Teléfono</label>
+              <input id="phone" name="phone" placeholder="Tu número" required />
+            </div>
+            <div>
+              <label for="service">Servicio</label>
+              <select id="service" name="service" required>
+                <option value="">Selecciona un servicio</option>
+                <option>Fumigación</option>
+                <option>Desratización</option>
+                <option>Control integral de plagas</option>
+              </select>
+            </div>
+            <div>
+              <label for="message">Mensaje</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Describe el problema o área a tratar"
+                required
+              ></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Enviar solicitud</button>
+            <p id="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        Sadex © <span id="year"></span> · Diseño conceptual inicial para reunión comercial.
+      </div>
+    </footer>
+
+    <script>
+      const form = document.getElementById("contactForm");
+      const statusMessage = document.getElementById("status");
+      const year = document.getElementById("year");
+      year.textContent = new Date().getFullYear();
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+          statusMessage.textContent = "Por favor completa todos los campos antes de enviar.";
+          statusMessage.className = "error";
+          return;
+        }
+
+        const data = Object.fromEntries(new FormData(form).entries());
+        console.log("Solicitud Sadex:", data);
+
+        statusMessage.textContent =
+          "¡Gracias! Recibimos tu solicitud y te contactaremos en breve.";
+        statusMessage.className = "ok";
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
